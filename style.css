@@ -424,3 +424,230 @@ margin-top:10px;
     }
 
 }
+/* زر الرجوع للأعلى */
+
+#topBtn{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#5d2e8c;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.3s;
+    z-index:999;
+}
+
+#topBtn:hover{
+    background:#7d44c7;
+    transform:translateY(-5px);
+}
+/* Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .7s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+/*=========================
+        COFFEE LOADER
+==========================*/
+
+#loader{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:#5d2e8c;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+transition:opacity .7s ease,
+visibility .7s ease;
+
+}
+
+#loader.hide{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+.coffee{
+
+text-align:center;
+position:relative;
+
+}
+
+.cup{
+
+width:180px;
+height:140px;
+
+background:#fff;
+
+border-radius:0 0 30px 30px;
+
+margin:auto;
+
+position:relative;
+
+animation:float 2.5s ease-in-out infinite;
+
+}
+
+.coffee-top{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:18px;
+
+background:#4e2a18;
+
+border-radius:10px 10px 0 0;
+
+}
+
+.handle{
+
+position:absolute;
+
+right:-30px;
+top:35px;
+
+width:45px;
+height:60px;
+
+border:10px solid #fff;
+
+border-left:none;
+
+border-radius:0 30px 30px 0;
+
+}
+
+.plate{
+
+width:240px;
+height:18px;
+
+background:#ececec;
+
+margin:18px auto 0;
+
+border-radius:50%;
+
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+.coffee h1{
+
+color:#fff;
+
+font-size:42px;
+
+margin-top:40px;
+
+letter-spacing:2px;
+
+}
+
+.coffee p{
+
+color:#fff;
+
+margin-top:10px;
+
+font-size:18px;
+
+opacity:.9;
+
+}
+/* ===== Steam ===== */
+
+.steam{
+    position:absolute;
+    top:-55px;
+    width:8px;
+    height:50px;
+    background:rgba(255,255,255,.8);
+    border-radius:50px;
+    filter:blur(5px);
+    animation:steam 2.2s infinite ease-in-out;
+}
+
+.steam1{
+    left:70px;
+}
+
+.steam2{
+    left:90px;
+    animation-delay:.4s;
+}
+
+.steam3{
+    left:110px;
+    animation-delay:.8s;
+}
+
+/* ===== Animations ===== */
+
+@keyframes steam{
+
+    0%{
+        opacity:0;
+        transform:translateY(0) scale(.8);
+    }
+
+    30%{
+        opacity:.8;
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-70px) scale(1.4);
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
