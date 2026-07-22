@@ -371,3 +371,25 @@ font-size:24px;
 }
 
 }
+.nav-links{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        width:100%;
+        padding:15px 20px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .logo h2{
+        font-size:24px;
+    }
+
+}
