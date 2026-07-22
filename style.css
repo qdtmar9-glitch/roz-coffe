@@ -1,4 +1,7 @@
 *{
+    box-sizing: border-box;
+}
+*{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -27,10 +30,11 @@ display:block;
 
 .navbar{
 width:100%;
+box-sizing:border-box;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
+padding:20px 5%;
 background:#5d2e8c;
 position:fixed;
 top:0;
@@ -350,5 +354,20 @@ margin-top:10px;
     body {
         overflow-x: hidden;
     }
+
+}
+@media (max-width:768px){
+
+.navbar{
+padding:15px 5%;
+}
+
+.nav-links{
+gap:10px;
+}
+
+.logo h2{
+font-size:24px;
+}
 
 }
