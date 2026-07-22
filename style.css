@@ -283,3 +283,52 @@ border-radius:20px;
 font-size:1rem;
 margin-top:10px;
 }
+.menu-ending {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.menu-ending hr {
+    width: 80%;
+    margin: auto;
+}
+
+.menu-ending h3 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+.payment-card {
+    text-align: center;
+    margin: 40px auto;
+    padding: 25px;
+    max-width: 350px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.payment-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.payment-card p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.qr-image-box {
+    width: 220px;
+    height: 220px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+    background: #fff;
+    border: 2px solid #eee;
+}
+
+.qr-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
