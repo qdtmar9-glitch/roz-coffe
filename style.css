@@ -963,3 +963,205 @@ opacity:.9;
     background:#fff;
     color:#000;
 }
+/* ==========================
+      MOBILE DESIGN
+========================== */
+
+@media (max-width:768px){
+
+/* الهيدر */
+
+.navbar{
+
+    padding:15px 20px;
+
+}
+
+.logo h2{
+
+    font-size:34px;
+
+}
+
+.menu-toggle{
+
+    font-size:34px;
+
+}
+
+/* الهيرو */
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:120px 20px 60px;
+
+}
+
+.hero-text,
+.hero-image{
+
+    width:100%;
+
+}
+
+.hero-text h1{
+
+    font-size:36px;
+
+}
+
+.hero-text p{
+
+    font-size:17px;
+
+}
+
+.hero-image img{
+
+    width:280px;
+
+    margin-top:30px;
+
+}
+
+/* الإحصائيات */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.box{
+
+    width:100%;
+
+}
+
+/* الكروت */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.card,
+.popular-card{
+
+    border-radius:18px;
+
+    padding:12px;
+
+}
+
+/* الصور */
+
+.card img,
+.popular-card img{
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+/* اسم المنتج */
+
+.card h3,
+.popular-card h3{
+
+    font-size:20px;
+
+    margin:12px 0;
+
+}
+
+/* الوصف */
+
+.card p,
+.popular-card p{
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+/* السعر والزر */
+
+.card-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:12px;
+
+}
+
+.price{
+
+    font-size:15px;
+
+    padding:8px 14px;
+
+}
+
+.add-cart{
+
+    font-size:14px;
+
+    padding:10px 12px;
+
+}
+
+/* السلة */
+
+.cart-icon{
+
+    bottom:90px;
+
+    right:15px;
+
+}
+
+/* زر الرجوع */
+
+#topBtn{
+
+    bottom:90px;
+
+    left:15px;
+
+}
+
+/* نافذة السلة */
+
+.cart-box{
+
+    width:95%;
+
+    padding:20px;
+
+}
+
+}
