@@ -234,9 +234,21 @@ const sendWhatsApp = document.getElementById("sendWhatsApp");
 
 sendWhatsApp.addEventListener("click",()=>{
 
+    const tableNumber = document.getElementById("tableNumber").value;
+
+    if(tableNumber === ""){
+
+        alert("يرجى إدخال رقم الطاولة أولاً.");
+
+        return;
+
+    }
+
     let message = "☕ طلب جديد من ROZ Coffee\n\n";
 
-    message += "🛒 المنتجات:\n\n";
+    message += "🪑 رقم الطاولة: " + tableNumber + "\n\n";
+
+    message += "🛒 الطلب:\n\n";
 
     cartItems.forEach(item=>{
 
