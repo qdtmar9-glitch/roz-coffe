@@ -30,7 +30,7 @@ topBtn.addEventListener("click", () => {
     });
 
 });
-const hiddenElements = document.querySelectorAll(".popular-card,.card,.box");
+const hiddenElements = document.querySelectorAll(".card,.box");
 
 const observer = new IntersectionObserver((entries)=>{
 

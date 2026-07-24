@@ -1130,9 +1130,35 @@ ul{
 
 @media(max-width:768px){
 
+.navbar{
+
+    padding:12px 20px;
+
+    display:grid;
+
+    grid-template-columns:50px 1fr 50px;
+
+    align-items:center;
+
+}
+
 .menu-toggle{
 
     display:block;
+
+    font-size:34px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    justify-self:start;
+
+}
+
+.logo{
+
+    justify-self:center;
 
 }
 
