@@ -1,11 +1,13 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
+const navbar = document.querySelector(".navbar");
 menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-
-    if (navLinks.classList.contains("active")) {
-        menuToggle.textContent = "✕";
+    navLinks.classList.toggle("active")
+    navbar.classList.toggle("menu-open")
+    if
+        (navLinks.classList.contains("active")) {
+        menuToggle.textContent = "x";
     } else {
         menuToggle.textContent = "☰";
     }
@@ -14,9 +16,9 @@ const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 300){
+    if (window.scrollY > 300) {
         topBtn.style.display = "block";
-    }else{
+    } else {
         topBtn.style.display = "none";
     }
 
@@ -25,18 +27,18 @@ window.addEventListener("scroll", () => {
 topBtn.addEventListener("click", () => {
 
     window.scrollTo({
-        top:0,
-        behavior:"smooth"
+        top: 0,
+        behavior: "smooth"
     });
 
 });
 const hiddenElements = document.querySelectorAll(".card,.box");
 
-const observer = new IntersectionObserver((entries)=>{
+const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             entry.target.classList.add("show");
         }
 
@@ -44,19 +46,19 @@ const observer = new IntersectionObserver((entries)=>{
 
 });
 
-hiddenElements.forEach(el=>{
+hiddenElements.forEach(el => {
     el.classList.add("hidden");
     observer.observe(el);
 });
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-    const loader=document.getElementById("loader");
+    const loader = document.getElementById("loader");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         loader.classList.add("hide");
 
-    },1200);
+    }, 1200);
 
 });
 const cartButtons = document.querySelectorAll(".add-cart");
@@ -75,7 +77,7 @@ cartButtons.forEach(button => {
 
             button.innerHTML = "🛒 أضف إلى السلة";
 
-        },1000);
+        }, 1000);
 
     });
 
@@ -84,9 +86,9 @@ let cartCount = 0;
 
 const cartCounter = document.getElementById("cartCount");
 console.log(cartCounter);
-cartButtons.forEach(button=>{
+cartButtons.forEach(button => {
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
         cartCount++;
 
@@ -107,23 +109,23 @@ cartButtons.forEach(button => {
 
         const productPrice = card.querySelector(".price").textContent;
 
-       const existingItem = cartItems.find(item => item.name === productName);
+        const existingItem = cartItems.find(item => item.name === productName);
 
-if(existingItem){
+        if (existingItem) {
 
-    existingItem.quantity++;
+            existingItem.quantity++;
 
-}else{
+        } else {
 
-    cartItems.push({
+            cartItems.push({
 
-        name: productName,
-        price: productPrice,
-        quantity:1
+                name: productName,
+                price: productPrice,
+                quantity: 1
 
-    });
+            });
 
-}
+        }
 
     });
 
@@ -142,16 +144,16 @@ cartIcon.addEventListener("click", () => {
 
 });
 
-closeCart.addEventListener("click",()=>{
+closeCart.addEventListener("click", () => {
 
-    cartModal.style.display="none";
+    cartModal.style.display = "none";
 
 });
-function renderCart(){
+function renderCart() {
 
     cartItemsDiv.innerHTML = "";
 
-    cartItems.forEach((item,index)=>{
+    cartItems.forEach((item, index) => {
 
         cartItemsDiv.innerHTML += `
 
@@ -179,9 +181,9 @@ function renderCart(){
 
     });
 
-    document.querySelectorAll(".plus").forEach(btn=>{
+    document.querySelectorAll(".plus").forEach(btn => {
 
-        btn.addEventListener("click",()=>{
+        btn.addEventListener("click", () => {
 
             cartItems[btn.dataset.index].quantity++;
 
@@ -191,17 +193,17 @@ function renderCart(){
 
     });
 
-    document.querySelectorAll(".minus").forEach(btn=>{
+    document.querySelectorAll(".minus").forEach(btn => {
 
-        btn.addEventListener("click",()=>{
+        btn.addEventListener("click", () => {
 
             const i = btn.dataset.index;
 
             cartItems[i].quantity--;
 
-            if(cartItems[i].quantity <= 0){
+            if (cartItems[i].quantity <= 0) {
 
-                cartItems.splice(i,1);
+                cartItems.splice(i, 1);
 
             }
 
@@ -210,47 +212,79 @@ function renderCart(){
         });
 
     });
-document.querySelectorAll(".delete-item").forEach(btn=>{
+    document.querySelectorAll(".delete-item").forEach(btn => {
 
-    btn.addEventListener("click",()=>{
+        btn.addEventListener("click", () => {
 
-        cartItems.splice(btn.dataset.index,1);
+            cartItems.splice(btn.dataset.index, 1);
 
-        cartCount--;
+            cartCount--;
 
-        if(cartCount < 0){
-            cartCount = 0;
-        }
+            if (cartCount < 0) {
+                cartCount = 0;
+            }
 
-        cartCounter.textContent = cartCount;
+            cartCounter.textContent = cartCount;
 
-        renderCart();
+            renderCart();
+
+        });
 
     });
-
-});
 }
 const sendWhatsApp = document.getElementById("sendWhatsApp");
 
-sendWhatsApp.addEventListener("click",()=>{
-
-    const tableNumber = document.getElementById("tableNumber").value;
-
-    if(tableNumber === ""){
-
-        alert("يرجى إدخال رقم الطاولة أولاً.");
-
-        return;
-
-    }
+sendWhatsApp.addEventListener("click", () => {
 
     let message = "☕ طلب جديد من ROZ Coffee\n\n";
 
-    message += "🪑 رقم الطاولة: " + tableNumber + "\n\n";
+    if (tableSection.style.display !== "none") {
 
+        const tableNumber = document.getElementById("tableNumber").value;
+
+        if (tableNumber === "") {
+
+            alert("يرجى إدخال رقم الطاولة.");
+
+            return;
+
+        }
+
+        message += "🍽️ نوع الطلب: داخل المقهى\n";
+        message += "🪑 رقم الطاولة: " + tableNumber + "\n\n";
+
+    } else {
+
+        const customerName = document.getElementById("customerName").value;
+        const customerPhone = document.getElementById("customerPhone").value;
+        const customerAddress = document.getElementById("customerAddress").value;
+
+        if (customerName === "" || customerPhone === "" || customerAddress === "") {
+
+            alert("يرجى تعبئة جميع بيانات الديليفري.");
+
+            return;
+
+        }
+
+        message += "🚗 نوع الطلب: ديليفري\n\n";
+
+        message += "👤 الاسم: " + customerName + "\n";
+        message += "📞 الهاتف: " + customerPhone + "\n";
+        message += "📍 العنوان: " + customerAddress + "\n";
+
+        if (userLocation !== "") {
+
+            message += "🗺️ الموقع: " + userLocation + "\n";
+
+        }
+
+        message += "\n";
+
+    }
     message += "🛒 الطلب:\n\n";
 
-    cartItems.forEach(item=>{
+    cartItems.forEach(item => {
 
         message += `• ${item.name} × ${item.quantity}\n`;
 
@@ -258,6 +292,70 @@ sendWhatsApp.addEventListener("click",()=>{
 
     const url = `https://wa.me/963991604765?text=${encodeURIComponent(message)}`;
 
-    window.open(url,"_blank");
+    window.open(url, "_blank");
+
+});
+const tableBtn = document.getElementById("tableBtn");
+const deliveryBtn = document.getElementById("deliveryBtn");
+
+const tableSection = document.getElementById("tableSection");
+const deliverySection = document.getElementById("deliverySection");
+
+tableBtn.addEventListener("click", () => {
+
+    tableBtn.classList.add("active");
+    deliveryBtn.classList.remove("active");
+
+    tableSection.style.display = "block";
+    deliverySection.style.display = "none";
+
+});
+
+deliveryBtn.addEventListener("click", () => {
+
+    deliveryBtn.classList.add("active");
+    tableBtn.classList.remove("active");
+
+    tableSection.style.display = "none";
+    deliverySection.style.display = "block";
+
+});
+let userLocation = "";
+
+const getLocationBtn = document.getElementById("getLocation");
+const locationStatus = document.getElementById("locationStatus");
+
+getLocationBtn.addEventListener("click", () => {
+
+    if (!navigator.geolocation) {
+
+        alert("المتصفح لا يدعم تحديد الموقع.");
+
+        return;
+
+    }
+
+    locationStatus.textContent = "⏳ جاري تحديد موقعك...";
+
+    navigator.geolocation.getCurrentPosition(
+
+        (position) => {
+
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            userLocation = `https://maps.google.com/?q=${lat},${lng}`;
+
+            locationStatus.textContent = "✅ تم تحديد موقعك بنجاح.";
+
+        },
+
+        () => {
+
+            locationStatus.textContent = "❌ لم يتم السماح بالوصول للموقع.";
+
+        }
+
+    );
 
 });
